@@ -1,0 +1,21 @@
+template <typename T>
+void Quadtree_node<T>::print (int l){
+    if (this == 0){
+        std::cout << "Empty" << std::endl;
+        return;
+    }
+
+    std::cout << "(" << x_value << "," << y_value << ") ->" << std::endl;
+
+    std::cout << std::string(l+1, '\t') << "NW ";
+    north_west -> print(l+1);
+
+    std::cout << std::string(l+1, '\t') << "NE ";
+    north_east -> print(l+1);
+
+    std::cout << std::string(l+1, '\t') << "SW "; 
+    south_west -> print(l+1);
+
+    std::cout << std::string(l+1, '\t') << "SE "; 
+    south_east -> print(l+1);
+}
